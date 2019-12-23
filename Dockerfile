@@ -55,7 +55,7 @@ RUN \
 	/var/tmp/* && \
  curl -O https://downloads.rclone.org/rclone-current-linux-amd64.zip && \
  unzip rclone-current-linux-amd64.zip && \
- cd rclone-*-linux-amd64 && sudo cp rclone /usr/bin/ && chown abc:abc /usr/bin/rclone && \
+ cd rclone-*-linux-amd64 && cp rclone /usr/bin/ && chown abc:abc /usr/bin/rclone && \
  chmod 755 /usr/bin/rclone && mkdir -p /usr/share/man/man1 && cp rclone.1 /usr/share/man/man1/ && makewhatis /usr/share/man && \
  rm -rf rclone-current-linux-amd64.zip rclone-*-linux-amd64
 
