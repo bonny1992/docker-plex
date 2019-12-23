@@ -29,7 +29,8 @@ RUN \
 	unrar \
 	wget \
 	jq \
-        unzip && \
+        unzip \
+        fuse && \
  echo "**** Udevadm hack ****" && \
  mv /sbin/udevadm /sbin/udevadm.bak && \
  echo "exit 0" > /sbin/udevadm && \
