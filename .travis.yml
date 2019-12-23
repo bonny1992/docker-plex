@@ -7,9 +7,7 @@ services:
   - 'docker'
 
 # prepare the machine before any code
-# installation scripts
-before_install:
-  - './.travis/main.sh'
+# installation scripts 
 
 # first execute the test suite.
 # after the test execution is done and didn't
