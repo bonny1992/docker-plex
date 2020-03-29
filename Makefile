@@ -8,7 +8,7 @@ test:
 	true
 
 image:
-	docker build -t $(IMAGE):$(RELEASE) .
+	docker build -t $(IMAGE):latest -t $(IMAGE):$(RELEASE) .
 
 push-image:
 	docker push $(IMAGE):$(RELEASE)
