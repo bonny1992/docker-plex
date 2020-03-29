@@ -12,6 +12,7 @@ image:
 
 push-image:
 	docker push $(IMAGE):$(RELEASE)
+	docker push $(IMAGE):latest
 
 
 .PHONY: all image push-image test
