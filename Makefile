@@ -1,7 +1,7 @@
 IMAGE := bonny1992/plex-rclone
 RELEASE := $(curl -sX GET 'https://plex.tv/api/downloads/5.json' | jq -r '.computer.Linux.version');
 
-all:
+echo:
 	@echo RELEASE is $(RELEASE)
 
 test:
