@@ -4,7 +4,7 @@ test:
 	true
 
 image:
-	docker build -t $(IMAGE) .
+	docker build -t $(IMAGE):$(PLEX_RELEASE) .
 
 push-image:
 	docker push $(IMAGE)
