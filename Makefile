@@ -1,16 +1,13 @@
-IMAGE := bonny1992/plex-rclone
-RELEASE := $(curl -sX GET 'https://plex.tv/api/downloads/5.json' | jq -r '.computer.Linux.version');
+IMAGE := bonny1992/plex-rclone:$(curl -sX GET 'https://plex.tv/api/downloads/5.json' | jq -r '.computer.Linux.version')
 
 echo:
-	RELEASE := $(curl -sX GET 'https://plex.tv/api/downloads/5.json' | jq -r '.computer.Linux.version');
-	@echo RELEASE is $(RELEASE)
+	@echo RELEASE is $(IMAGE)
 
 test:
 	true
 
 image:
-	RELEASE := $(curl -sX GET 'https://plex.tv/api/downloads/5.json' | jq -r '.computer.Linux.version');
-	docker build -t $(IMAGE):$(RELEASE) .
+	docker build -t $(IMAGE) .
 
 push-image:
 	docker push $(IMAGE)
