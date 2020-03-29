@@ -14,4 +14,4 @@ push-image:
 	docker push $(IMAGE)
 
 
-.PHONY: image push-image test
+.PHONY: all image push-image test
