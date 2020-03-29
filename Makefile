@@ -8,7 +8,7 @@ test:
 	true
 
 image:
-	docker build -t $(IMAGE):$(RELEASE) --build-arg PLEX_RELEASE=$(RELEASE) .
+	docker build -t $(IMAGE):$(RELEASE) .
 
 push-image:
 	docker push $(IMAGE)
