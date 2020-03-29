@@ -1,5 +1,5 @@
 IMAGE := bonny1992/plex-rclone
-$(eval RELEASE:=$(curl -sX GET 'https://plex.tv/api/downloads/5.json' | jq -r '.computer.Linux.version'))
+$(eval RELEASE = -v $(shell curl -sX GET 'https://plex.tv/api/downloads/5.json' | jq -r '.computer.Linux.version'))
 
 echo:
 	@echo RELEASE is $(RELEASE)
