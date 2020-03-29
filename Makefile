@@ -1,16 +1,17 @@
-IMAGE := bonny1992/plex-rclone:$(curl -sX GET 'https://plex.tv/api/downloads/5.json' | jq -r '.computer.Linux.version')
+IMAGE := bonny1992/plex-rclone
+$(eval RELEASE:=$(curl -sX GET 'https://plex.tv/api/downloads/5.json' | jq -r '.computer.Linux.version'))
 
 echo:
-	@echo RELEASE is $(IMAGE)
+	@echo RELEASE is $(RELEASE)
 
 test:
 	true
 
 image:
-	docker build -t $(IMAGE) .
+	docker build -t $(IMAGE):$(RELEASE) .
 
 push-image:
-	docker push $(IMAGE)
+	docker push $(IMAGE):$(RELEASE)
 
 
 .PHONY: all image push-image test
