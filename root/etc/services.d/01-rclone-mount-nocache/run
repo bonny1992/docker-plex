@@ -1,0 +1,8 @@
+#!/usr/bin/with-contenv /bin/sh 
+
+
+echo "Mounting remote with rclone"
+rclone mount --config /rclone/config/rclone.conf gdrive: /mnt/godrive \
+   --allow-other --allow-non-empty --dir-cache-time 672h \
+   --vfs-cache-max-age 675h --vfs-read-chunk-size 128M   \
+   --vfs-read-chunk-size-limit 1G --buffer-size 32M

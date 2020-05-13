@@ -1,3 +1,4 @@
 #!/usr/bin/with-contenv /bin/sh
 
 mkdir /mnt/gdrive
+mkdir /mnt/godrive
